@@ -6,10 +6,6 @@ project [42](https://www.42urduliz.com/) school
 
 This project is about creating a small data exchange program using UNIX signals (SIGUSR1 and SIGUSR2).
 
-## Installation
-
-```bash
-
 ## Usage
 
 ### Server
