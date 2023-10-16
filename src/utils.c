@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:24:29 by ciclo             #+#    #+#             */
-/*   Updated: 2022/10/31 19:30:20 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/10/16 11:17:46 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
 	int	sign;
 	int	result;
 
-	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
+	while (str && *str > 47 && *str < 58)
+		result = result * 10 + (*(str++) - 48);
 	return (result * sign);
 }
 
@@ -39,8 +34,7 @@ int	ft_strlen(char *str)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != 0)
-		i++;
+	i = -1;
+	while (str[++i]);
 	return (i);
 }

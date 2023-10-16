@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciclo <ciclo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 01:32:28 by dugonzal          #+#    #+#             */
-/*   Updated: 2022/10/31 19:32:28 by ciclo            ###   ########.fr       */
+/*   Updated: 2023/10/16 10:26:17 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	handler(int sig, siginfo_t *info, void *context)
 	send_msg(sig);
 }
 
-int	main(int argc,__attribute__((unused))char **argv)
+int	main(int argc, __attribute__((unused))char **argv)
 {
 	struct sigaction	sa;
 
