@@ -6,7 +6,7 @@
 /*   By: Dugonzal <dugonzal@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 01:32:28 by dugonzal          #+#    #+#             */
-/*   Updated: 2023/10/16 10:26:17 by Dugonzal         ###   ########.fr       */
+/*   Updated: 2023/10/16 11:23:52 by Dugonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_minitalk	g_minitalk;
 
-void	send_msg(int sig)
+static void	msg(int sig)
 {
 	g_minitalk.size++;
 	g_minitalk.msg >>= 1;
@@ -27,11 +27,12 @@ void	send_msg(int sig)
 	}
 }
 
+// get context pid -> [responder al terminar la comunicacion entre procesos]
 void	handler(int sig, siginfo_t *info, void *context)
 {
 	(void)context;
 	(void)info;
-	send_msg(sig);
+	msg(sig);
 }
 
 int	main(int argc, __attribute__((unused))char **argv)
